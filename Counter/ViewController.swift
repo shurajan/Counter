@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonPlusDidTap(_ sender: Any) {
         counter+=1
-        counterLabel.text = "\(counter)"
+        counterLabel.text = "Значение счётчика: \(counter)"
         logAndShowEvent(what: "значение изменено на +1")
     }
     
@@ -50,19 +50,18 @@ class ViewController: UIViewController {
     @IBAction func buttonMinusDidTap(_ sender: Any) {
         if counter >= 1{
             counter-=1
-            counterLabel.text = "\(counter)"
+            counterLabel.text = "Значение счётчика: \(counter)"
             logAndShowEvent(what: "значение изменено на -1")
         } else {
             logAndShowEvent(what: "попытка уменьшить значение счётчика ниже 0")
-            counter = 0
         }
     }
  
     
     @IBAction func buttonRestartDidTap(_ sender: Any) {
         counter=0
+        counterLabel.text = "0"
         logAndShowEvent(what: "значение сброшено")
-        counterLabel.text = "\(counter)"
     }
     
     private func logAndShowEvent (what message: String){
